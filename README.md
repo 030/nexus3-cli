@@ -6,6 +6,7 @@
 [![StackOverflow SE Questions](https://img.shields.io/stackexchange/stackoverflow/t/n3dr.svg?logo=stackoverflow)](https://stackoverflow.com/tags/n3dr)
 [![DevOps SE Questions](https://img.shields.io/stackexchange/devops/t/n3dr.svg?logo=stackexchange)](https://devops.stackexchange.com/tags/n3dr)
 [![ServerFault SE Questions](https://img.shields.io/stackexchange/serverfault/t/n3dr.svg?logo=serverfault)](https://serverfault.com/tags/n3dr)
+![Docker Pulls](https://img.shields.io/docker/pulls/utrecht/n3dr.svg)
 ![Issues](https://img.shields.io/github/issues-raw/030/n3dr.svg)
 ![Pull requests](https://img.shields.io/github/issues-pr-raw/030/n3dr.svg)
 ![Total downloads](https://img.shields.io/github/downloads/030/n3dr/total.svg)
@@ -145,6 +146,33 @@ Use "n3dr [command] --help" for more information about a command.
 
 In order to download as a anonymous user, one has to use the `--anonymous`
 option.
+
+## Docker
+
+[![dockeri.co](https://dockeri.co/image/utrecht/n3dr)](https://hub.docker.com/r/utrecht/n3dr)
+
+### Download
+
+```bash
+docker run -it \
+  -v /home/${USER}/.n3dr:/root/.n3dr \
+  -v /tmp/n3dr:/tmp/n3dr utrecht/n3dr:6.0.3
+```
+
+### Upload
+
+```bash
+docker run -it \
+  --entrypoint=/bin/ash \
+  -v /home/${USER}/.n3dr:/root/.n3dr \
+  -v /tmp/n3dr:/tmp/n3dr utrecht/n3dr:6.0.3
+```
+
+navigate to the repository folder, e.g. `/tmp/n3dr/download*/` and upload:
+
+```bash
+n3dr upload -r releases -n <url>
+```
 
 ## Store the password in a read-only file
 
